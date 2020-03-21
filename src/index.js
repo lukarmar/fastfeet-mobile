@@ -1,17 +1,23 @@
 import 'react-native-gesture-handler';
 import React from 'react';
+import { PersistGate } from 'redux-persist/integration/react';
+import { Provider } from 'react-redux';
 import { View } from 'react-native';
 
 import './config/ReactotronConfig';
 
-import SigIn from './pages/SigIn';
+import SignIn from './pages/SignIn';
 
-// import { Container } from './styles';
+import { persistor, store } from './store';
 
 export default function App() {
   return (
-    <View>
-      <SigIn />
-    </View>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <View>
+          <SignIn />
+        </View>
+      </PersistGate>
+    </Provider>
   );
 }
