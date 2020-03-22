@@ -10,7 +10,7 @@ import SignIn from './pages/SignIn';
 
 import { persistor, store } from './store';
 
-export default function App() {
+export default function Index() {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
