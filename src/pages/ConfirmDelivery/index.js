@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text, View } from 'react-native';
 
-// import { Container } from './styles';
+import Background from '../../components/Background';
 
 export default function ConfirmDelivery() {
   return (
