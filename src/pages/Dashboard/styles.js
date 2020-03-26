@@ -12,7 +12,7 @@ export const Header = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 323px;
+  width: 355px;
 `;
 
 export const Informations = styled.View`
@@ -34,6 +34,7 @@ export const TextWelcome = styled.Text`
 `;
 export const TextName = styled.Text`
   font-size: 22px;
-  color: #444444;
+  color: ${props => (props.textStyle ? '#7D40E7' : '#444444')};
+  text-decoration: ${props => (props.textStyle ? 'underline' : 'none')};
   font-weight: bold;
 `;

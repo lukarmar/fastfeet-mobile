@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -8,10 +8,11 @@ import {
   Container,
   OrderInformation,
   Textinformation,
-  StatusLisk,
+  StatusLink,
   ListOrder,
   OrderHeader,
-  TestLink,
+  TextLinkPending,
+  TextLinkDelivered,
   TextHeader,
   OrderTime,
   Boxtime,
@@ -24,14 +25,47 @@ import {
 } from './styles';
 
 export default function DelyveryList() {
+  const [linkStyle01, setLinkStyle01] = useState(true);
+  const [linkStyle02, setLinkStyle02] = useState(false);
+
+  function handleSetStyle(yourState, myState, yourSet, mySet) {
+    if (yourState) {
+      yourSet(false);
+      mySet(!myState);
+    }
+  }
   return (
     <Container>
       <OrderInformation>
         <Textinformation>Entregas</Textinformation>
-        <StatusLisk>
-          <TestLink>Pendente</TestLink>
-          <TestLink>Entregues</TestLink>
-        </StatusLisk>
+        <StatusLink>
+          <TextLinkPending
+            linkStyle01={linkStyle01}
+            onPress={() =>
+              handleSetStyle(
+                linkStyle02,
+                linkStyle01,
+                setLinkStyle02,
+                setLinkStyle01
+              )
+            }
+          >
+            Pendente
+          </TextLinkPending>
+          <TextLinkDelivered
+            linkStyle02={linkStyle02}
+            onPress={() =>
+              handleSetStyle(
+                linkStyle01,
+                linkStyle02,
+                setLinkStyle01,
+                setLinkStyle02
+              )
+            }
+          >
+            Entregues
+          </TextLinkDelivered>
+        </StatusLink>
       </OrderInformation>
       <ListOrder>
         <OrderHeader>
@@ -58,7 +92,10 @@ export default function DelyveryList() {
             <TextLabel>Cidade</TextLabel>
             <TextDate>Rio de janeiro</TextDate>
           </BoxFooter>
-          <TestLinkFooter>Pendente</TestLinkFooter>
+          <BoxFooter>
+            <TextLabel style={{ color: '#f8f9fd' }}>detalhes</TextLabel>
+            <TestLinkFooter>Ver detalhes</TestLinkFooter>
+          </BoxFooter>
         </OrderFooter>
       </ListOrder>
     </Container>

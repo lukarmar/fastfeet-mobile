@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -34,7 +34,7 @@ export default function Dashboard() {
         </BoxInformation>
         <Icon name="exit-to-app" size={24} color="#E74040" />
       </Header>
-      {/* <OrderList /> */}
+      <OrderList />
     </Container>
   );
 }
