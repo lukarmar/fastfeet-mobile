@@ -1,8 +1,8 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  width: 355px;
-  flex: 1;
+  width: 100%;
+  max-width: 355px;
 `;
 
 export const OrderInformation = styled.View`
@@ -34,8 +34,9 @@ export const TextLinkDelivered = styled.Text`
 `;
 
 export const ListOrder = styled.View`
-  height: auto;
   border-radius: 4px;
+  margin-bottom: 29px;
+  width: 100%;
   border: 4px solid #f8f9fd;
 `;
 export const OrderHeader = styled.View`
@@ -50,19 +51,41 @@ export const TextHeader = styled.Text`
   margin-left: 10px;
 `;
 export const OrderTime = styled.View`
-  height: 44px;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0 22px 0 22px;
-`;
-export const Boxtime = styled.View`
   align-items: center;
+  margin-bottom: 15px;
+  width: 100%;
+`;
+
+export const LineTime = styled.View``;
+
+export const Elipse = styled.View`
+  width: 9px;
+  height: 9px;
+  border-radius: 4.5px;
+  border: 1px solid #7d40e7;
+  background: #fff;
+  margin-bottom: 3px;
+`;
+export const ContainerTime = styled.View`
+  flex-direction: row;
+  width: 298px;
+  justify-content: space-between;
+`;
+
+export const BoxTime = styled.View`
+  align-items: center;
+`;
+export const BoxTextTime = styled.View`
+  height: 30px;
+  justify-content: center;
 `;
 export const TextTime = styled.Text`
   font-size: 8px;
+  text-align: left;
   color: #999999;
   text-align: center;
 `;
+
 export const OrderFooter = styled.View`
   height: 64px;
   flex-direction: row;

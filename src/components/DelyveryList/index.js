@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { StyleSheet } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-// local-shipping
+import { lineTop } from '../../util/styleLineTop';
 
 import {
   Container,
@@ -14,8 +15,12 @@ import {
   TextLinkPending,
   TextLinkDelivered,
   TextHeader,
+  LineTime,
+  Elipse,
   OrderTime,
-  Boxtime,
+  ContainerTime,
+  BoxTime,
+  BoxTextTime,
   TextTime,
   OrderFooter,
   BoxFooter,
@@ -23,6 +28,8 @@ import {
   TextDate,
   TestLinkFooter,
 } from './styles';
+
+const style = StyleSheet.create({ lineTop });
 
 export default function DelyveryList() {
   const [linkStyle01, setLinkStyle01] = useState(true);
@@ -73,15 +80,73 @@ export default function DelyveryList() {
           <TextHeader>Encomenda 01</TextHeader>
         </OrderHeader>
         <OrderTime>
-          <Boxtime>
-            <TextTime>Aguardando Retirada</TextTime>
-          </Boxtime>
-          <Boxtime>
-            <TextTime>Retirada</TextTime>
-          </Boxtime>
-          <Boxtime>
-            <TextTime>Entregue</TextTime>
-          </Boxtime>
+          <LineTime style={style.lineTop} />
+          <ContainerTime>
+            <BoxTime>
+              <Elipse />
+              <BoxTextTime>
+                <TextTime>Aguardando</TextTime>
+                <TextTime>Retirada</TextTime>
+              </BoxTextTime>
+            </BoxTime>
+            <BoxTime>
+              <Elipse />
+              <BoxTextTime>
+                <TextTime>Retirada</TextTime>
+              </BoxTextTime>
+            </BoxTime>
+            <BoxTime>
+              <Elipse />
+              <BoxTextTime>
+                <TextTime>Entregue</TextTime>
+              </BoxTextTime>
+            </BoxTime>
+          </ContainerTime>
+        </OrderTime>
+        <OrderFooter>
+          <BoxFooter>
+            <TextLabel>Data</TextLabel>
+            <TextDate>14/01/2020</TextDate>
+          </BoxFooter>
+          <BoxFooter>
+            <TextLabel>Cidade</TextLabel>
+            <TextDate>Rio de janeiro</TextDate>
+          </BoxFooter>
+          <BoxFooter>
+            <TextLabel style={{ color: '#f8f9fd' }}>detalhes</TextLabel>
+            <TestLinkFooter>Ver detalhes</TestLinkFooter>
+          </BoxFooter>
+        </OrderFooter>
+      </ListOrder>
+      {/* SEGUNDA PARTE DAQUI */}
+      <ListOrder>
+        <OrderHeader>
+          <Icon name="local-shipping" size={24} color="#7D40E7" />
+          <TextHeader>Encomenda 01</TextHeader>
+        </OrderHeader>
+        <OrderTime>
+          <LineTime style={style.lineTop} />
+          <ContainerTime>
+            <BoxTime>
+              <Elipse />
+              <BoxTextTime>
+                <TextTime>Aguardando</TextTime>
+                <TextTime>Retirada</TextTime>
+              </BoxTextTime>
+            </BoxTime>
+            <BoxTime>
+              <Elipse />
+              <BoxTextTime>
+                <TextTime>Retirada</TextTime>
+              </BoxTextTime>
+            </BoxTime>
+            <BoxTime>
+              <Elipse />
+              <BoxTextTime>
+                <TextTime>Entregue</TextTime>
+              </BoxTextTime>
+            </BoxTime>
+          </ContainerTime>
         </OrderTime>
         <OrderFooter>
           <BoxFooter>

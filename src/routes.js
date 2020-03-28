@@ -25,6 +25,11 @@ export default function createRouter(isSigned = false) {
         activeTintColor: '#7D40E7',
         inactiveTintColor: '#999999',
         keyboardHidesTabBar: true,
+        style: { paddingTop: 13, height: 70 },
+        labelStyle: {
+          fontSize: 14,
+          marginBottom: 12,
+        },
       }}
     >
       <Tabs.Screen
@@ -33,7 +38,7 @@ export default function createRouter(isSigned = false) {
         options={{
           tabBarLabel: 'Entregas',
           tabBarIcon: ({ color }) => (
-            <Icon name="format-align-justify" size={24} color={color} />
+            <Icon name="reorder" size={26} color={color} />
           ),
         }}
       />
@@ -41,9 +46,9 @@ export default function createRouter(isSigned = false) {
         name="MyProfile"
         component={MyProfile}
         options={{
-          tabBarLabel: 'Meu perfil',
+          tabBarLabel: 'Meu Perfil',
           tabBarIcon: ({ color }) => (
-            <Icon name="account-circle" size={24} color={color} />
+            <Icon name="account-circle" size={26} color={color} />
           ),
         }}
       />
